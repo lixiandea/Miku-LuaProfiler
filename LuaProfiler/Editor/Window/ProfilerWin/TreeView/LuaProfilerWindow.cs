@@ -169,21 +169,21 @@ namespace MikuLuaProfiler
             }
             oldStartUrl = null;
             oldEndUrl = null;
-            Destory(oldStartT);
-            Destory(oldEndT);
+            Destroy(oldStartT);
+            Destroy(oldEndT);
             disableChart = null;
-            Destory(disableChart);
+            Destroy(disableChart);
             luaChart = null;
-            Destory(luaChart);
+            Destroy(luaChart);
             monoChart = null;
-            Destory(monoChart);
+            Destroy(monoChart);
             fpsChart = null;
-            Destory(fpsChart);
+            Destroy(fpsChart);
             pssChart = null;
-            Destory(pssChart);
+            Destroy(pssChart);
             powrChart = null;
-            Destory(powrChart);
-            Destory(boxTex);
+            Destroy(powrChart);
+            Destroy(boxTex);
             boxTex = null;
             m_gs = null;
             currentStyle = null;
@@ -196,25 +196,25 @@ namespace MikuLuaProfiler
 
         private void OnDisable()
         {
-            Destory(disableChart);
+            Destroy(disableChart);
             disableChart = null;
-            Destory(luaChart);
+            Destroy(luaChart);
             luaChart = null;
-            Destory(monoChart);
+            Destroy(monoChart);
             monoChart = null;
-            Destory(fpsChart);
+            Destroy(fpsChart);
             fpsChart = null;
-            Destory(pssChart);
+            Destroy(pssChart);
             pssChart = null;
-            Destory(powrChart);
+            Destroy(powrChart);
             powrChart = null;
-            Destory(boxTex);
+            Destroy(boxTex);
             boxTex = null;
             LuaDeepProfilerSetting.ProfilerWinOpen = false;
             EditorApplication.update -= m_TreeView.DequeueSample;
         }
 
-        void Destory(UnityEngine.Object o)
+        void Destroy(UnityEngine.Object o)
         {
             if (o == null) return;
             if (Application.isPlaying)
@@ -659,7 +659,7 @@ namespace MikuLuaProfiler
                 currentStyle = new GUIStyle(EditorStyles.helpBox);
                 if (boxTex != null)
                 {
-                    Destory(boxTex);
+                    Destroy(boxTex);
                     boxTex = null;
                 }
                 boxTex = GenTextureColor(15, 15, boxColor);
