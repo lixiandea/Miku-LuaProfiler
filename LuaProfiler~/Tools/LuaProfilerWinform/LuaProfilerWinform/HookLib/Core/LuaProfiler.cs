@@ -64,7 +64,7 @@ namespace MikuLuaProfiler
             m_onReceiveDiff = onReceive;
         }
 
-        public static void UnRegistReceive()
+        public static void UnRegisterReceive()
         {
             m_onReceiveSample = null;
             m_onReceiveRef = null;

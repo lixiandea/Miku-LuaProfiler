@@ -349,7 +349,7 @@ namespace MikuLuaProfiler
                         NetWorkMgrClient.Disconnect();
                         currentFrameIndex = 0;
                         m_TreeView.Clear(true);
-                        LuaProfiler.UnRegistReceive();
+                        LuaProfiler.UnRegisterReceive();
                         Sample.UnRegAction();
                         LuaRefInfo.UnRegAction();
 
@@ -1111,7 +1111,7 @@ namespace MikuLuaProfiler
             NetWorkMgrClient.Disconnect();
             currentFrameIndex = 0;
             m_TreeView.Clear(true);
-            LuaProfiler.UnRegistReceive();
+            LuaProfiler.UnRegisterReceive();
             Sample.UnRegAction();
             LuaRefInfo.UnRegAction();
             LuaProfiler.RegisterOnReceiveSample(m_TreeView.LoadRootSample);
