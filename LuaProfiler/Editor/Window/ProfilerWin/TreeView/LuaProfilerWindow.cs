@@ -101,7 +101,7 @@ namespace MikuLuaProfiler
         private Texture2D monoChart;
         private Texture2D fpsChart;
         private Texture2D pssChart;
-        private Texture2D powrChart;
+        private Texture2D powerChart;
         private Texture2D boxTex;
         private GUIStyle currentStyle;
         private GUIStyle m_gs;
@@ -181,8 +181,8 @@ namespace MikuLuaProfiler
             Destroy(fpsChart);
             pssChart = null;
             Destroy(pssChart);
-            powrChart = null;
-            Destroy(powrChart);
+            powerChart = null;
+            Destroy(powerChart);
             Destroy(boxTex);
             boxTex = null;
             m_gs = null;
@@ -206,8 +206,8 @@ namespace MikuLuaProfiler
             fpsChart = null;
             Destroy(pssChart);
             pssChart = null;
-            Destroy(powrChart);
-            powrChart = null;
+            Destroy(powerChart);
+            powerChart = null;
             Destroy(boxTex);
             boxTex = null;
             LuaDeepProfilerSetting.ProfilerWinOpen = false;
@@ -271,9 +271,9 @@ namespace MikuLuaProfiler
             {
                 pssChart = GenTextureColor(15, 15, pssColor);
             }
-            if (powrChart == null)
+            if (powerChart == null)
             {
-                powrChart = GenTextureColor(15, 15, powerColor);
+                powerChart = GenTextureColor(15, 15, powerColor);
             }
         }
 
@@ -605,7 +605,7 @@ namespace MikuLuaProfiler
 
             GUILayout.Space(5);
             EditorGUILayout.BeginHorizontal();
-            t = isShowPowerChart ? powrChart : disableChart;
+            t = isShowPowerChart ? powerChart : disableChart;
             isShowPowerChart = GUILayout.Toggle(isShowPowerChart, t, EditorStyles.label, GUILayout.Width(15), GUILayout.Height(15));
             GUILayout.Label("Power", GUILayout.Width(40));
             GUILayout.Label(m_TreeView.GetPower());
