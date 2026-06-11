@@ -173,19 +173,19 @@ namespace MikuLuaProfiler
 #if UNITY_EDITOR
             desotryCount = 0;
             Destroy(gameObject);
-            UnityEditor.EditorApplication.update += WaitDestory;
+            UnityEditor.EditorApplication.update += WaitDestroy;
 #endif
             NetWorkMgr.Close();
         }
         
 #if UNITY_EDITOR
         int desotryCount = 0;
-        private void WaitDestory()
+        private void WaitDestroy()
         {
             desotryCount++;
             if (desotryCount > 10)
             {
-                UnityEditor.EditorApplication.update -= WaitDestory;
+                UnityEditor.EditorApplication.update -= WaitDestroy;
                 if (LuaProfiler.mainL != IntPtr.Zero)
                 {
                     LuaDLL.lua_close(LuaProfiler.mainL);
